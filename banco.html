@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NathiBank - Acesso Restrito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="mockup-container">
+        <div class="smartphone">
+            <div class="screen">
+                
+                <div id="login-screen">
+                    <div class="brand-logo">🏛️</div>
+                    <h2>NathiBank Premium</h2>
+                    <p class="welcome-phrase">Seja bem-vindo ao sistema de autoatendimento digital. Por favor, insira suas credenciais de acesso.</p>
+                    
+                    <div class="input-group">
+                        <input type="password" id="password-input" placeholder="Digite sua senha eletrônica">
+                    </div>
+                    
+                    <button class="btn-submit" onclick="verifyPassword()">Acessar Conta</button>
+                    <div id="error-msg" class="error-message">Senha incorreta! Acesso recusado.</div>
+                </div>
+
+                <div id="bank-screen">
+                    <div class="bank-header">
+                        <div class="user-profile">
+                            <div class="avatar">👤</div>
+                            <div class="user-info">
+                                <h4>Nathália Silva</h4>
+                                <small>Cliente VIP • Ag. 0001 • C/C 12345-6</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="balance-card">
+                        <p>Saldo Total Disponível</p>
+                        <div class="balance-amount">R$ 250.450,00</div>
+                        <span class="balance-status">🟢 Conta Ativa & Segura</span>
+                    </div>
+
+                    <div class="bank-content">
+                        <div class="money-visual">
+                            <div class="money-icons">💰 💵 🤑</div>
+                            <strong>Reserva Investida</strong>
+                            <p style="font-size: 12px; color: #4caf50; margin-top: 5px;">Rendimento atual: 105% do CDI</p>
+                        </div>
+
+                        <div class="actions-grid">
+                            <div class="action-button">💸 Pix</div>
+                            <div class="action-button">📊 Investir</div>
+                            <div class="action-button">💳 Cartões</div>
+                            <div class="action-button">🧾 Extrato</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
