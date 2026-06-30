@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Container que simula a mão e o celular juntos */
+.mockup-container {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+/* Simulação estilizada de uma mão segurando o aparelho */
+.mockup-container::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -50px;
+    width: 120px;
+    height: 200px;
+    background: #e0a98c;
+    border-radius: 50px 20px 20px 50px;
+    transform: rotate(-15deg);
+    z-index: 1;
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Dedos segurando a lateral do celular */
+.mockup-container::after {
+    content: '✋';
+    font-size: 100px;
+    position: absolute;
+    bottom: 40px;
+    left: -60px;
+    transform: scaleX(-1) rotate(25deg);
+    z-index: 3;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+/* Estrutura do Celular */
+.smartphone {
+    position: relative;
+    width: 360px;
+    height: 740px;
+    background: #111;
+    border-radius: 40px;
+    border: 12px solid #333;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* Tela do Celular */
+.screen {
+    width: 100%;
+    height: 100%;
+    background: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Tela de Login */
+#login-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 30px;
+    background: linear-gradient(180deg, #1e272e, #2c3e50);
+    color: white;
+    text-align: center;
+}
+
+.brand-logo {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+#login-screen h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.welcome-phrase {
+    margin-bottom: 35px;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.85;
+    padding: 0 10px;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    font-size: 15px;
+    text-align: center;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.input-group input::placeholder {
+    color: #ccc;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: #00b894;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-submit:hover {
+    background: #009473;
+}
+
+.error-message {
+    color: #ff7675;
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 20px;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Tela do Banco (Invisível por padrão) */
+#bank-screen {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    background: #f1f2f6;
+}
+
+.bank-header {
+    background: #2c3e50;
+    color: white;
+    padding: 35px 20px 25px 20px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border: 2px solid white;
+}
+
+.user-info h4 {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.user-info small {
+    opacity: 0.7;
+    font-size: 11px;
+}
+
+.balance-card {
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin: -15px 20px 20px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.balance-card p {
+    color: #888;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.balance-amount {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 6px;
+}
+
+.balance-status {
+    font-size: 11px;
+    color: #2ed573;
+    font-weight: 600;
+}
+
+/* Área de Dinheiro */
+.bank-content {
+    padding: 0 20px 20px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.money-visual {
+    background: #e8f5e9;
+    border: 2px dashed #2ed573;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    color: #1b5e20;
+}
+
+.money-icons {
+    font-size: 45px;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.action-button {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2c3e50;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: transform 0.1s;
+}
+
+.action-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
